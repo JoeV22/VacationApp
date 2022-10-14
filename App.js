@@ -1,52 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Div, ScrollView, Logo,
-  ImageBackground,
-  TouchableOpacity, Pressable } from 'react-native';
-import { pattern, buttons } from './Stylesheets/styles'   
 
-export default function App() {
-  return (
-    <ScrollView>
-    <View style={styles.container}>
-    <TouchableOpacity>
-    <View style={styles.HeaderContainer}>
-      <Text style={styles.Header}>
-      Vacation Ex
-      </Text>
-    </View>
-    </TouchableOpacity>
-      <Image
-      source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/James_Franco_4%2C_2013.jpg' }}
-      style={{ width: "25%", height: "15%", radius: "50%", marginBottom:"100%",}}
-    />
-      <StatusBar style="auto" />
-    </View>
-    </ScrollView>
-  );
-}
+import React from 'react';
+import { View, Image, StyleSheet, ScrollView, SafeAreaView, StatusBar, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: StatusBar.currentHeight,
+    backgroundColor: "#090426",
   },
-  HeaderContainer: {
-    flex: 1,
-    color: '#0000FF',
-    marginTop: "65%",
-
+  app: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#090426",
+    marginBottom: "20%",
+  },
+  logo: {
+    width: 250,
+    height: 200,
+  },
+  space: {
+    marginBottom: "5%"
   },
   Header: {
-    flex: 1,
-    color: '#0000FF',
-    marginTop: "25%",
-    fontWeigth:"bold",
-    fontSize: "30",
-    marginRight:"40%",
-    textAlignVertical: "top"
-
+    color: "#FFFFFF",
+    fontSize: 32,
   },
-  
 });
+
+const App = () => {
+  return (
+    <SafeAreaView style={styles.app} >
+    <View>
+      <Text style={styles.Header}>Wow</Text>
+    </View>
+    <ScrollView style={styles.container}>
+      <Image
+        source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/James_Franco_4%2C_2013.jpg' }}
+        style={styles.logo}
+      />
+      <View style={styles.space}></View>
+      <Image
+        style={styles.logo}
+        source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/James_Franco_4%2C_2013.jpg' }}
+      />
+      <View style={styles.space}></View>
+      <Image
+        style={styles.logo}
+        source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/James_Franco_4%2C_2013.jpg' }}
+      />
+    </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+export default App;
